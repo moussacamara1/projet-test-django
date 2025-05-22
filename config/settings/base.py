@@ -187,7 +187,6 @@ BLEACH_ALLOWED_ATTRIBUTES = json.loads(
 BLEACH_EXCLUDE_FIELDS = config('BLEACH_EXCLUDE_FIELDS', default="", cast=Csv())
 
 
-
 sentry_sdk.init(
     dsn="https://c8ccb76ca5a97fbd20d000f16a6b7ef7@o4509360921903104.ingest.de.sentry.io/4509360927080528",
     integrations=[
@@ -200,10 +199,8 @@ LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'formatters': {
-        'verbose': {
-            'format': '{levelname} {asctime} {name} - {message}',
-            'style': '{',
-    }
+        'verbose': {'format': '{levelname} {asctime} {name} - {message}',
+                    'style': '{'}
     },
     'handlers': {
         'file': {

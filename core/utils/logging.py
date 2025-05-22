@@ -5,6 +5,7 @@ from rest_framework import status
 
 logger = logging.getLogger("django")
 
+
 def handle_create_view(view_instance, request, *args, **kwargs):
     try:
         logger.info(f"[REGISTER] Tentative de création de {request.data}")

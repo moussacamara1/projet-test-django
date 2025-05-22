@@ -7,6 +7,8 @@ from .models import User
 from .serializers import UserSerializer
 from rest_framework.permissions import AllowAny
 from core.utils.logging import handle_create_view
+
+
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
@@ -29,5 +31,5 @@ class UserDetailView(generics.RetrieveUpdateAPIView):
     permission_classes = [IsSelf]
 
 
-def trigger_error(request):
+# def trigger_error(request):
     division_by_zero = 1 / 0
