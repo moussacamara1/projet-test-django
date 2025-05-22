@@ -1,0 +1,16 @@
+INFO 2025-05-21 15:46:52,482 django - [REGISTER] Tentative de création de {'username': 'Developer', 'password': '123456', 'role': 'developer', 'email': 'test@gmail.com'}
+ERROR 2025-05-21 15:46:52,526 django - [REGISTER ERROR] Erreur : {'username': [ErrorDetail(string='A user with that username already exists.', code='unique')]}
+Traceback (most recent call last):
+  File "C:\Users\admin\Desktop\Scrum\core\utils\logging.py", line 11, in handle_create_view
+    response = super(view_instance.__class__, view_instance).create(request, *args, **kwargs)
+  File "C:\Users\admin\Desktop\Scrum\env\Lib\site-packages\rest_framework\mixins.py", line 18, in create
+    serializer.is_valid(raise_exception=True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\Desktop\Scrum\env\Lib\site-packages\rest_framework\serializers.py", line 233, in is_valid
+    raise ValidationError(self.errors)
+rest_framework.exceptions.ValidationError: {'username': [ErrorDetail(string='A user with that username already exists.', code='unique')]}
+DEBUG 2025-05-21 15:46:52,557 urllib3.connectionpool - Starting new HTTPS connection (1): o4509360921903104.ingest.de.sentry.io:443
+ERROR 2025-05-21 15:46:52,558 django.request - Internal Server Error: /api/users/register
+DEBUG 2025-05-21 15:46:53,116 urllib3.connectionpool - https://o4509360921903104.ingest.de.sentry.io:443 "POST /api/4509360927080528/envelope/ HTTP/1.1" 200 0
+INFO 2025-05-21 15:48:23,010 django - [REGISTER] Tentative de création de {'username': 'test', 'password': '123456', 'role': 'developer', 'email': 'test@gmail.com'}
+INFO 2025-05-21 15:48:23,418 django - [REGISTER] Création de {'username': 'test', 'password': '123456', 'role': 'developer', 'email': 'test@gmail.com'} réussie
