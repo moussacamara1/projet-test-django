@@ -22,9 +22,10 @@ class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
         fields = ['id', 'name', 'description', 'owner', 'owner_id',
-                  'team', 'team_ids', 'dated', 'datef', 'objectifs', 'status']
+                  'team', 'team_ids', 'created_at', 'end_at',
+                  'updated_at', 'objectifs', 'status']
 
-    """def create(self, validated_data):
+    def create(self, validated_data):
         team_data = validated_data.pop('team', [])
         project = Project.objects.create(**validated_data)
         project.team.set(team_data)
@@ -38,4 +39,3 @@ class ProjectSerializer(serializers.ModelSerializer):
         if team_data is not None:
             instance.team.set(team_data)
         return instance
-"""
